@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premier Construction - Building Excellence Since 1985</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)", 
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    popover: {
+                        DEFAULT: "var(--popover)",
+                        foreground: "var(--popover-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    destructive: {
+                        DEFAULT: "var(--destructive)",
+                        foreground: "var(--destructive-foreground)",
+                    },
+                    border: "var(--border)",
+                    input: "var(--input)",
+                    ring: "var(--ring)",
+                    chart: {
+                        "1": "var(--chart-1)",
+                        "2": "var(--chart-2)",
+                        "3": "var(--chart-3)",
+                        "4": "var(--chart-4)",
+                        "5": "var(--chart-5)",
+                    }
+                },
+                fontFamily: {
+                    sans: ["var(--font-sans)"],
+                    serif: ["var(--font-serif)"],
+                    mono: ["var(--font-mono)"],
+                }
+            },
+        }
+    };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --background: hsl(210 20% 98%);
+            --foreground: hsl(222.2 84% 4.9%);
+            --card: hsl(0 0% 100%);
+            --card-foreground: hsl(222.2 84% 4.9%);
+            --popover: hsl(0 0% 100%);
+            --popover-foreground: hsl(222.2 84% 4.9%);
+            --primary: hsl(221.2 83.2% 53.3%);
+            --primary-foreground: hsl(210 40% 98%);
+            --secondary: hsl(210 40% 96%);
+            --secondary-foreground: hsl(222.2 84% 4.9%);
+            --muted: hsl(210 40% 96%);
+            --muted-foreground: hsl(215.4 16.3% 46.9%);
+            --accent: hsl(20.5 90.2% 48.2%);
+            --accent-foreground: hsl(210 40% 98%);
+            --destructive: hsl(0 84.2% 60.2%);
+            --destructive-foreground: hsl(210 40% 98%);
+            --border: hsl(214.3 31.8% 91.4%);
+            --input: hsl(214.3 31.8% 91.4%);
+            --ring: hsl(221.2 83.2% 53.3%);
+            --radius: 0.75rem;
+            --font-sans: 'Inter', ui-sans-serif, system-ui;
+        }
+        
+        .dark {
+            --background: hsl(222.2 84% 4.9%);
+            --foreground: hsl(210 40% 98%);
+            --card: hsl(222.2 84% 4.9%);
+            --card-foreground: hsl(210 40% 98%);
+            --popover: hsl(222.2 84% 4.9%);
+            --popover-foreground: hsl(210 40% 98%);
+            --primary: hsl(217.2 91.2% 59.8%);
+            --primary-foreground: hsl(222.2 84% 4.9%);
+            --secondary: hsl(217.2 32.6% 17.5%);
+            --secondary-foreground: hsl(210 40% 98%);
+            --muted: hsl(217.2 32.6% 17.5%);
+            --muted-foreground: hsl(215 20.2% 65.1%);
+            --accent: hsl(20.5 90.2% 48.2%);
+            --accent-foreground: hsl(210 40% 98%);
+            --destructive: hsl(0 62.8% 30.6%);
+            --destructive-foreground: hsl(210 40% 98%);
+            --border: hsl(217.2 32.6% 17.5%);
+            --input: hsl(217.2 32.6% 17.5%);
+            --ring: hsl(224.3 76.3% 94.1%);
+        }
+        
+        * {
+            border-color: var(--border);
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: var(--font-sans);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- @COMPONENT: Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-primary">
+                            <i class="fas fa-hard-hat mr-2 text-accent"></i>
+                            Premier Construction
+                        </h1>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#services" class="text-muted-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                        <a href="#about" class="text-muted-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#projects" class="text-muted-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Projects</a>
+                        <a href="#contact" class="text-muted-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                        <a href="#contact" class="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-2 rounded-md text-sm font-semibold transition-colors">
+                            Get Quote
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button type="button" class="bg-muted inline-flex items-center justify-center p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/80 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                        <i class="fas fa-bars h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center">
+        <!-- Modern construction site with workers in safety gear -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&h=1200" 
+                 alt="Construction workers on modern building site" 
+                 class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-slate-900 bg-opacity-60"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-8">
+                    Building Excellence,
+                    <span class="text-accent">One Project</span>
+                    at a Time
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-3xl">
+                    With over 35 years of experience, we deliver superior construction services that exceed expectations. From residential developments to commercial complexes, we build lasting relationships through quality craftsmanship.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="#contact" class="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 text-center">
+                        <i class="fas fa-phone mr-3"></i>
+                        Get Free Quote
+                    </a>
+                    <a href="#projects" class="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all text-center">
+                        <i class="fas fa-play mr-3"></i>
+                        View Our Work
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Services Section -->
+    <section id="services" class="py-24 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Our Construction Services</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    From foundation to finish, we provide comprehensive construction solutions tailored to your needs.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-border">
+                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-primary-foreground text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground mb-4">Residential Construction</h3>
+                    <p class="text-muted-foreground mb-6">Custom homes, renovations, and residential developments built with precision and care.</p>
+                    <ul class="text-muted-foreground space-y-2">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Custom Home Building</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Home Renovations</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Kitchen & Bath Remodeling</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-border">
+                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-primary-foreground text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground mb-4">Commercial Construction</h3>
+                    <p class="text-muted-foreground mb-6">Office buildings, retail spaces, and commercial facilities designed for success.</p>
+                    <ul class="text-muted-foreground space-y-2">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Office Buildings</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Retail Spaces</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Warehouses</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-border">
+                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-primary-foreground text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground mb-4">Renovation & Remodeling</h3>
+                    <p class="text-muted-foreground mb-6">Transform existing spaces with our expert renovation and remodeling services.</p>
+                    <ul class="text-muted-foreground space-y-2">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Interior Renovations</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Exterior Upgrades</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Space Planning</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-border">
+                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-hammer text-primary-foreground text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground mb-4">Design-Build</h3>
+                    <p class="text-muted-foreground mb-6">Streamlined process combining design and construction under one roof.</p>
+                    <ul class="text-muted-foreground space-y-2">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Architectural Design</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Project Management</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Cost Control</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-border">
+                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-road text-primary-foreground text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground mb-4">Infrastructure</h3>
+                    <p class="text-muted-foreground mb-6">Heavy civil construction for roads, bridges, and utility infrastructure.</p>
+                    <ul class="text-muted-foreground space-y-2">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Road Construction</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Bridge Building</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Utility Installation</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-border">
+                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-helmet-safety text-primary-foreground text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground mb-4">Project Management</h3>
+                    <p class="text-muted-foreground mb-6">Expert oversight ensuring projects are completed on time and within budget.</p>
+                    <ul class="text-muted-foreground space-y-2">
+                        <li><i class="fas fa-check text-accent mr-2"></i>Schedule Management</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Quality Control</li>
+                        <li><i class="fas fa-check text-accent mr-2"></i>Safety Oversight</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Services Section -->
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-24 bg-muted/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-8">35+ Years of Building Excellence</h2>
+                    <p class="text-xl text-muted-foreground mb-8 leading-relaxed">
+                        Since 1985, Premier Construction has been at the forefront of innovative construction solutions. We've built our reputation on quality craftsmanship, reliable service, and unwavering commitment to our clients' vision.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8 mb-10">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent mb-2" data-bind="stats.projects">500+</div>
+                            <div class="text-muted-foreground font-medium">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent mb-2" data-bind="stats.years">35+</div>
+                            <div class="text-muted-foreground font-medium">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent mb-2" data-bind="stats.employees">150+</div>
+                            <div class="text-muted-foreground font-medium">Skilled Workers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-accent mb-2" data-bind="stats.satisfaction">98%</div>
+                            <div class="text-muted-foreground font-medium">Client Satisfaction</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-colors text-center">
+                            Start Your Project
+                        </a>
+                        <a href="#projects" class="border border-border hover:bg-muted text-foreground px-8 py-3 rounded-lg font-semibold transition-colors text-center">
+                            View Portfolio
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Construction team meeting on site -->
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
+                         alt="Construction team meeting and planning on building site" 
+                         class="rounded-2xl shadow-2xl w-full" />
+                    
+                    <div class="absolute -bottom-6 -left-6 bg-accent text-accent-foreground p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-award text-2xl mr-3"></i>
+                            <div>
+                                <div class="font-bold">Licensed & Insured</div>
+                                <div class="text-sm opacity-90">Fully Certified</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Portfolio Section -->
+    <section id="projects" class="py-24 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Recent Projects</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    Explore our portfolio of successful construction projects that showcase our expertise and commitment to excellence.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: projects.map(project => ( -->
+                <!-- Project 1 -->
+                <div class="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all border border-border">
+                    <!-- Modern residential building construction -->
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=500" 
+                         alt="Modern residential apartment complex under construction" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Residential</span>
+                            <span class="text-muted-foreground text-sm">Completed 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-card-foreground mb-2" data-bind="project.name">Luxury Apartments Complex</h3>
+                        <p class="text-muted-foreground mb-4" data-bind="project.description">Modern 120-unit residential complex with sustainable features and premium amenities.</p>
+                        <div class="text-accent font-semibold" data-bind="project.value">$8.5M Project Value</div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all border border-border">
+                    <!-- Commercial office building construction -->
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=500" 
+                         alt="Modern glass office building in urban setting" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium">Commercial</span>
+                            <span class="text-muted-foreground text-sm">Completed 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-card-foreground mb-2">Corporate Headquarters</h3>
+                        <p class="text-muted-foreground mb-4">12-story office tower with state-of-the-art technology and LEED certification.</p>
+                        <div class="text-accent font-semibold">$15.2M Project Value</div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all border border-border">
+                    <!-- Industrial manufacturing facility -->
+                    <img src="https://pixabay.com/get/gbbaa35e881cd90e8a4ac5ddc4e7c555021b7c63be741c1c9be9ffc00f518033a36c4bea58584470022c4650e8180007b10a6276b4dabd94566d94bebee8c97d0_1280.jpg" 
+                         alt="Modern industrial manufacturing facility exterior" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-secondary/10 text-secondary-foreground px-3 py-1 rounded-full text-sm font-medium">Industrial</span>
+                            <span class="text-muted-foreground text-sm">Completed 2022</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-card-foreground mb-2">Manufacturing Facility</h3>
+                        <p class="text-muted-foreground mb-4">200,000 sq ft advanced manufacturing plant with automated systems.</p>
+                        <div class="text-accent font-semibold">$12.8M Project Value</div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all border border-border">
+                    <!-- Shopping center retail complex -->
+                    <img src="https://images.unsplash.com/photo-1555636222-cae831e670b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=500" 
+                         alt="Modern shopping center with glass facades and landscaping" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium">Retail</span>
+                            <span class="text-muted-foreground text-sm">Completed 2022</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-card-foreground mb-2">Retail Shopping Center</h3>
+                        <p class="text-muted-foreground mb-4">Mixed-use development with 50+ retail spaces and dining options.</p>
+                        <div class="text-accent font-semibold">$22.3M Project Value</div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all border border-border">
+                    <!-- Healthcare medical center -->
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=500" 
+                         alt="Modern hospital and medical center building" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">Healthcare</span>
+                            <span class="text-muted-foreground text-sm">Completed 2021</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-card-foreground mb-2">Medical Center</h3>
+                        <p class="text-muted-foreground mb-4">Advanced healthcare facility with specialized treatment areas and emergency services.</p>
+                        <div class="text-accent font-semibold">$28.7M Project Value</div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all border border-border">
+                    <!-- Educational institution building -->
+                    <img src="https://images.unsplash.com/photo-1581447109200-bf2769116351?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=500" 
+                         alt="Modern university campus building with contemporary architecture" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-secondary/10 text-secondary-foreground px-3 py-1 rounded-full text-sm font-medium">Education</span>
+                            <span class="text-muted-foreground text-sm">Completed 2021</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-card-foreground mb-2">University Science Center</h3>
+                        <p class="text-muted-foreground mb-4">State-of-the-art research facility with advanced laboratories and lecture halls.</p>
+                        <div class="text-accent font-semibold">$18.9M Project Value</div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center">
+                    <i class="fas fa-folder-open mr-3"></i>
+                    View Full Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Portfolio Section -->
+
+    <!-- @COMPONENT: Testimonials Section -->
+    <section class="py-24 bg-muted/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">What Our Clients Say</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    Don't just take our word for it. Here's what our satisfied clients have to say about working with Premier Construction.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: testimonials.map(testimonial => ( -->
+                <!-- Testimonial 1 -->
+                <div class="bg-card rounded-xl p-8 shadow-lg border border-border">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground mb-6 italic" data-bind="testimonial.content">
+                        "Premier Construction exceeded all our expectations. Their attention to detail and commitment to quality is unmatched. Our new facility is exactly what we envisioned."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary-foreground font-bold" data-bind="testimonial.initials">JM</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-card-foreground" data-bind="testimonial.name">Jennifer Martinez</div>
+                            <div class="text-muted-foreground text-sm" data-bind="testimonial.title">CEO, Martinez Industries</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-card rounded-xl p-8 shadow-lg border border-border">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground mb-6 italic">
+                        "Working with Premier was a game-changer. They completed our project on time and within budget, while maintaining the highest quality standards throughout."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4">
+                            <span class="text-accent-foreground font-bold">RT</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-card-foreground">Robert Thompson</div>
+                            <div class="text-muted-foreground text-sm">Property Developer</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-card rounded-xl p-8 shadow-lg border border-border">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground mb-6 italic">
+                        "The professionalism and expertise of the Premier team is outstanding. They turned our vision into reality with incredible craftsmanship and attention to detail."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mr-4">
+                            <span class="text-secondary-foreground font-bold">SC</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-card-foreground">Sarah Chen</div>
+                            <div class="text-muted-foreground text-sm">Architect, Chen & Associates</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials Section -->
+
+    <!-- @COMPONENT: Equipment Showcase -->
+    <section class="py-24 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">State-of-the-Art Equipment</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    We invest in the latest construction technology and heavy machinery to ensure efficient, safe, and precise project execution.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Equipment 1 -->
+                <div class="text-center">
+                    <!-- Large construction crane on building site -->
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400" 
+                         alt="Tower crane operating at construction site" 
+                         class="w-full h-48 object-cover rounded-xl mb-4 shadow-lg" />
+                    <h3 class="text-xl font-bold text-foreground mb-2">Tower Cranes</h3>
+                    <p class="text-muted-foreground">High-capacity lifting for tall building construction</p>
+                </div>
+                
+                <!-- Equipment 2 -->
+                <div class="text-center">
+                    <!-- Heavy excavator machinery -->
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400" 
+                         alt="Heavy excavator machinery at work site" 
+                         class="w-full h-48 object-cover rounded-xl mb-4 shadow-lg" />
+                    <h3 class="text-xl font-bold text-foreground mb-2">Excavators</h3>
+                    <p class="text-muted-foreground">Precision earthmoving and site preparation</p>
+                </div>
+                
+                <!-- Equipment 3 -->
+                <div class="text-center">
+                    <!-- Concrete mixer trucks -->
+                    <img src="https://pixabay.com/get/gec2e82e6dfa6b3cc5884494b586c2e2f6f7aa54a5df974fe4037323fe67f6a5eda1bbfa0322a7ecb2b398813c8b1000010d5812ea729b891898a4d1bfa012194_1280.jpg" 
+                         alt="Concrete mixer truck delivering ready-mix concrete" 
+                         class="w-full h-48 object-cover rounded-xl mb-4 shadow-lg" />
+                    <h3 class="text-xl font-bold text-foreground mb-2">Concrete Mixers</h3>
+                    <p class="text-muted-foreground">Fresh concrete delivery and placement</p>
+                </div>
+                
+                <!-- Equipment 4 -->
+                <div class="text-center">
+                    <!-- Construction dump trucks -->
+                    <img src="https://pixabay.com/get/gf2508895fdb877360fbf1deccc8be4793c2c94da0424b0fe1d53cdc3d716c23926f4ec35cc9dea1d8bc75efe40b36501c19ea003dc81bfc020f1a863103d975d_1280.jpg" 
+                         alt="Heavy duty dump truck at construction site" 
+                         class="w-full h-48 object-cover rounded-xl mb-4 shadow-lg" />
+                    <h3 class="text-xl font-bold text-foreground mb-2">Dump Trucks</h3>
+                    <p class="text-muted-foreground">Material transportation and waste removal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Equipment Showcase -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-24 bg-muted/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Start Your Project Today</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    Ready to bring your construction vision to life? Contact us for a free consultation and detailed project estimate.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Form -->
+                <div class="bg-card rounded-2xl p-8 shadow-xl border border-border">
+                    <h3 class="text-2xl font-bold text-card-foreground mb-6">Get Your Free Quote</h3>
+                    
+                    <form class="space-y-6" data-implementation="Should validate and submit contact form">
+                        <!-- @STATE: formData:object = {} -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-card-foreground mb-2">First Name</label>
+                                <input type="text" id="firstName" name="firstName" data-bind="formData.firstName"
+                                       class="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors"
+                                       placeholder="John" required />
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-card-foreground mb-2">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" data-bind="formData.lastName"
+                                       class="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors"
+                                       placeholder="Doe" required />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-card-foreground mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" data-bind="formData.email"
+                                   class="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors"
+                                   placeholder="john@example.com" required />
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-card-foreground mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" data-bind="formData.phone"
+                                   class="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors"
+                                   placeholder="(555) 123-4567" />
+                        </div>
+                        
+                        <div>
+                            <label for="projectType" class="block text-sm font-medium text-card-foreground mb-2">Project Type</label>
+                            <select id="projectType" name="projectType" data-bind="formData.projectType"
+                                    class="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors">
+                                <option value="">Select Project Type</option>
+                                <option value="residential">Residential Construction</option>
+                                <option value="commercial">Commercial Construction</option>
+                                <option value="renovation">Renovation & Remodeling</option>
+                                <option value="infrastructure">Infrastructure</option>
+                                <option value="design-build">Design-Build</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="budget" class="block text-sm font-medium text-card-foreground mb-2">Estimated Budget</label>
+                            <select id="budget" name="budget" data-bind="formData.budget"
+                                    class="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors">
+                                <option value="">Select Budget Range</option>
+                                <option value="under-100k">Under $100,000</option>
+                                <option value="100k-500k">$100,000 - $500,000</option>
+                                <option value="500k-1m">$500,000 - $1,000,000</option>
+                                <option value="1m-5m">$1,000,000 - $5,000,000</option>
+                                <option value="over-5m">Over $5,000,000</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-card-foreground mb-2">Project Description</label>
+                            <textarea id="message" name="message" rows="4" data-bind="formData.message"
+                                      class="w-full px-4 py-3 bg-input border border-border rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors resize-none"
+                                      placeholder="Tell us about your project vision, timeline, and any specific requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" data-event="click:handleSubmit"
+                                class="w-full bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-3"></i>
+                            Submit Quote Request
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="bg-card rounded-2xl p-8 shadow-xl border border-border">
+                        <h3 class="text-2xl font-bold text-card-foreground mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-accent-foreground"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-card-foreground mb-1">Our Location</h4>
+                                    <p class="text-muted-foreground" data-bind="company.address">
+                                        1234 Construction Ave<br>
+                                        Builder's District, BD 12345
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-phone text-primary-foreground"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-card-foreground mb-1">Phone Numbers</h4>
+                                    <p class="text-muted-foreground" data-bind="company.phone">
+                                        Office: (555) 123-BUILD<br>
+                                        Emergency: (555) 911-HELP
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-envelope text-secondary-foreground"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-card-foreground mb-1">Email Addresses</h4>
+                                    <p class="text-muted-foreground" data-bind="company.email">
+                                        info@premierconstruction.com<br>
+                                        projects@premierconstruction.com
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-muted rounded-lg flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-clock text-muted-foreground"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-card-foreground mb-1">Business Hours</h4>
+                                    <p class="text-muted-foreground" data-bind="company.hours">
+                                        Mon-Fri: 7:00 AM - 6:00 PM<br>
+                                        Saturday: 8:00 AM - 4:00 PM<br>
+                                        Sunday: Emergency Only
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-card rounded-2xl p-8 shadow-xl border border-border">
+                        <h3 class="text-2xl font-bold text-card-foreground mb-6">Why Choose Premier Construction?</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-3"></i>
+                                <span class="text-card-foreground">Licensed & Fully Insured</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-3"></i>
+                                <span class="text-card-foreground">35+ Years of Experience</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-3"></i>
+                                <span class="text-card-foreground">Free Project Estimates</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-3"></i>
+                                <span class="text-card-foreground">Quality Guarantee</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-3"></i>
+                                <span class="text-card-foreground">On-Time Project Delivery</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-accent mr-3"></i>
+                                <span class="text-card-foreground">24/7 Emergency Support</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 pt-6 border-t border-border">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-accent mb-2">98%</div>
+                                <div class="text-muted-foreground">Client Satisfaction Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-hard-hat text-accent text-2xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-white">Premier Construction</h3>
+                    </div>
+                    <p class="text-slate-400 mb-6 max-w-md">
+                        Building excellence since 1985. We are your trusted partner for all construction needs, delivering quality projects that stand the test of time.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-slate-800 hover:bg-accent rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-facebook-f text-slate-300 hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800 hover:bg-accent rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-twitter text-slate-300 hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800 hover:bg-accent rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin-in text-slate-300 hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800 hover:bg-accent rounded-lg flex items-center justify-center transition-colors">
+                            <i class="fab fa-instagram text-slate-300 hover:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-slate-400 hover:text-accent transition-colors">Residential Construction</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-accent transition-colors">Commercial Projects</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-accent transition-colors">Renovation & Remodeling</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-accent transition-colors">Design-Build</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-accent transition-colors">Infrastructure</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-accent transition-colors">Project Management</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-slate-400 hover:text-accent transition-colors">About Us</a></li>
+                        <li><a href="#projects" class="text-slate-400 hover:text-accent transition-colors">Our Projects</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-accent transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-accent transition-colors">Safety</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-accent transition-colors">News & Updates</a></li>
+                        <li><a href="#contact" class="text-slate-400 hover:text-accent transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-16 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-slate-400 mb-4 md:mb-0">
+                        &copy; 2024 Premier Construction. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-slate-400 hover:text-accent transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-slate-400 hover:text-accent transition-colors">Terms of Service</a>
+                        <a href="#" class="text-slate-400 hover:text-accent transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- JavaScript for smooth scrolling and basic interactions -->
+    <script>
+        (function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    // TODO: Implement mobile menu toggle functionality
+                    console.log('Mobile menu toggle clicked');
+                });
+            }
+
+            // Form submission handler
+            const contactForm = document.querySelector('form[data-implementation*="contact form"]');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form validation and submission
+                    console.log('Contact form submitted');
+                    alert('Thank you for your interest! We will contact you within 24 hours.');
+                });
+            }
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for fade-in animation
+            document.querySelectorAll('.group, .bg-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(el);
+            });
+        })();
+    </script>
+</body>
+</html>
